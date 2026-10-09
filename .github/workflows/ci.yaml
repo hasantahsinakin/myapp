@@ -29,6 +29,7 @@ jobs:
           context: .
           push: true
           tags: ${{ env.IMAGE }}:${{ github.sha }}
+          build-args: GIT_SHA=${{ github.sha }}
 
       - name: Trivy taraması (sadece raporlar)
         uses: aquasecurity/trivy-action@v0.36.0
